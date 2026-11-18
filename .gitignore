@@ -1,0 +1,19 @@
+# Dependências (Node.js)
+node_modules/
+**/node_modules/
+
+# Variáveis de ambiente com chaves de API e senhas (nunca enviar ao GitHub!)
+.env
+**/.env
+
+# Arquivos compactados e backups
+*.rar
+*.zip
+
+# Arquivos temporários e de sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+*.log
