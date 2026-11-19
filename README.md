@@ -30,6 +30,7 @@ O repositório segue rigorosamente o padrão modular e limpo exigido:
 │
 ├── 📁 backend/              -> Código-fonte do servidor Node.js/Express e rotas da API
 │   ├── server.js            (Servidor Express com rotas /api/produtos, /api/contato e /api/chat)
+│   ├── setup.js             (Cria o banco e executa o database/script.sql: npm run setup)
 │   ├── package.json         (Lista de dependências: express e pg)
 │   └── package-lock.json    (Versões travadas das dependências)
 │
@@ -69,7 +70,7 @@ O assistente virtual **VortexBot** atende os clientes na loja com foco total em 
 ## 🚀 Como Executar o Projeto Localmente
 
 ### 1. Pré-requisitos
-- **Node.js** (versão 18 ou superior instalada na máquina)
+- **Node.js** (versão 22 ou superior instalada na máquina)
 - Conexão com a internet (para a API do Google Gemini)
 
 ### 2. Configurar o `.env`
