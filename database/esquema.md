@@ -102,7 +102,7 @@ Registra os atendimentos, orçamentos e pedidos enviados pelo formulário do sit
 
 ## 3. Consultas SQL Obrigatórias Explicadas
 
-Todas estão prontas no arquivo `db/consultas.sql`. Aqui está o que cada uma faz em palavras simples:
+Todas estão prontas no arquivo `database/consultas.sql`. Aqui está o que cada uma faz em palavras simples:
 
 ### 1) Consulta com `JOIN` (Catálogo da Loja)
 Junta a tabela de produtos com a tabela de categorias para trazer o nome da categoria em vez de apenas o número do ID:
@@ -160,7 +160,7 @@ WHERE id = 1;
 * **O que o EXPLAIN provou:**
   * **Antes:** O PostgreSQL precisava varrer a tabela inteira linha por linha (`Seq Scan`) e ordenar na memória (`Sort`), gastando cerca de **12,80 ms**.
   * **Depois:** O PostgreSQL vai direto no índice ordenado (`Index Scan`), gastando apenas **0,11 ms** (mais de 100x mais rápido!).
-  * A evidência completa está salva no arquivo `db/explain-antes-depois.txt`.
+  * A evidência completa está nas Figuras 9 e 10 do relatório.
 
 ---
 
