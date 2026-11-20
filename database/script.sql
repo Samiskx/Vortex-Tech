@@ -5,8 +5,8 @@
 -- =========================================================
 -- VORTEX TECH — ESTRUTURA DO BANCO DE DADOS (PostgreSQL)
 -- =========================================================
--- Execute com: npm run db:setup
--- (ou: psql -U postgres -d vortex_tech -f db/schema.sql)
+-- Execute com: npm run setup
+-- (ou: psql -U postgres -d vortex_tech -f database/script.sql)
 -- =========================================================
 
 -- ---------------------------------------------------------
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS mensagens (
 -- mais recentes filtrando por status. Sem este índice o PostgreSQL precisa
 -- ler a tabela inteira e ordenar tudo (Seq Scan + Sort). Com ele, faz uma
 -- busca direta no índice já na ordem certa (Index Scan).
--- Demonstração completa em db/demo-indice.sql
+-- Demonstração completa em database/consultas.sql e database/esquema.md
 CREATE INDEX IF NOT EXISTS idx_mensagens_status_criado
     ON mensagens (status, criado_em DESC);
 
@@ -95,7 +95,7 @@ COMMENT ON TABLE mensagens  IS 'Mensagens/pedidos enviados pelo formulário de c
 -- VORTEX TECH — DADOS INICIAIS (catálogo da loja)
 -- =========================================================
 -- Pode rodar quantas vezes quiser: não duplica nada.
--- Execute com: npm run db:setup
+-- Execute com: npm run setup
 -- =========================================================
 
 -- ---------------------------------------------------------
