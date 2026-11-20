@@ -80,16 +80,6 @@ function colocarMensagem(texto, tipo) {
     return balao;
 }
 
-// Indicador animado de três pontinhos enquanto a IA pensa
-function colocarDigitando() {
-    const balao = document.createElement("div");
-    balao.className = "mensagem bot digitando";
-    balao.innerHTML = "<span></span><span></span><span></span>";
-    chatMensagens.appendChild(balao);
-    chatMensagens.scrollTop = chatMensagens.scrollHeight;
-    return balao;
-}
-
 // Abrir e fechar o chat
 if (btnChatFlutuante && janelaChat) {
     btnChatFlutuante.addEventListener("click", () => {
@@ -125,8 +115,8 @@ if (formChat && inputMensagem) {
         colocarMensagem(texto, "usuario");
         inputMensagem.value = "";
 
-        // 2. Mostra indicador de que o bot está pensando (3 pontinhos animados)
-        const indicadorPensando = colocarDigitando();
+        // 2. Mostra indicador de que o bot está pensando
+        const indicadorPensando = colocarMensagem("<em>Digitando...</em>", "bot");
 
         inputMensagem.disabled = true;
 
